@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProStore | E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🛍️ ProStore</h1>
+    <p>Your Premium Shopping Destination</p>
+</header>
+
+<nav>
+    <button onclick="showHome()">Home</button>
+    <button onclick="showLogin()">Login</button>
+    <button onclick="showCart()">Cart 🛒</button>
+</nav>
+
+<main class="container">
+
+    <section id="loginSection" hidden>
+        <h2>Login</h2>
+        <input id="username" placeholder="Enter Username">
+        <button onclick="login()">Login</button>
+        <button onclick="logout()">Logout</button>
+        <p id="userStatus"></p>
+    </section>
+
+    <section id="homeSection">
+        <input id="search" placeholder="Search products...">
+
+        <select id="category">
+            <option value="all">All Categories</option>
+        </select>
+
+        <select id="sort">
+            <option value="default">Default</option>
+            <option value="low">Price Low to High</option>
+            <option value="high">Price High to Low</option>
+        </select>
+
+        <button onclick="showAddForm()">Add Product</button>
+
+        <div id="productForm" hidden>
+            <input id="productName" placeholder="Product Name">
+            <input id="productPrice" type="number" placeholder="Price">
+            <input id="productImage" placeholder="Image URL">
+            <button onclick="saveProduct()">Save Product</button>
+        </div>
+
+        <p id="message"></p>
+        <div id="products" class="products"></div>
+    </section>
+
+    <section id="cartSection" hidden>
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <h3 id="total">Total: ₹0</h3>
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
